@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TestController::class,'home'])->name('home');
 Route::post('/get-date', [TestController::class,'get_date'])->name('get_date');
+
+
+Route::get('/image-upload', [TestController::class,'image_upload'])->name('image_upload');
+Route::post('/uploads', [TestController::class,'uploads'])->name('uploads');
