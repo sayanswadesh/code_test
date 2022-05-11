@@ -34,8 +34,7 @@ class TestController extends Controller
         $uploadImages = [];
         if (!empty($images)){
             foreach ($images as $image) {
-                $name=rand(0,99999).'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('/upload/'),$name);
+                $name = \App\helper\Image::addImage($image);
                 $uploadImages[] = $name;
             }
             $update = Image::first();
